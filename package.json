@@ -1,0 +1,20 @@
+{
+  "name": "backend-m6",
+  "version": "1.0.0",
+  "description": "Aplicacion proyecto modulo 6",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Daniel Quezada Agüero",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
