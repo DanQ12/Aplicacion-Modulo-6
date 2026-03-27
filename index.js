@@ -10,8 +10,15 @@ const express = require("express")
 //Importacion del router
 const router = require("./Routes/router");
 
+//importacion del middleware
+const loggerMiddleware = require("./Middleware/logger");
+
 //Instancia de aplicacion Express
 const app = express();
+
+//Middleware para registar peticiones en log.txt
+
+app.use(loggerMiddleware)
 
 //Conectar rutas definidas en router.js
 

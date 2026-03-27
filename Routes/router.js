@@ -4,7 +4,10 @@
 const express = require("express");
 const router = express.Router();
 
+//Importamos los controladores para las rutas
 
+const homeController = require("../Controllers/homeController");
+const statusController = require("../Controllers/statusController");
 
 // Rutas publicas
 
