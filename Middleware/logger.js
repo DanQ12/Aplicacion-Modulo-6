@@ -4,7 +4,7 @@ const fs=require("fs");
 const path = require("path");
 
 //Ruta absoluta al archivo logs.txt
-const logPath = path.join(__dirname, "../logs/log.txt");
+const logPath = path.join(__dirname, "../Logs/log.txt");
 
 //Crear linea de regitro con fecha, hora y ruta de aceso
 
@@ -14,7 +14,7 @@ const loggerMiddleware = (req, res,next) =>{
     //Formatear en [YYYY-MM-DD] [HH:MM:SS]
     const fecha = now.toLocaleDateString("es-CL");
     const hora = now.toLocaleTimeString("es-CL");
-    const linea = `[${fecha}] [${hora} ${req.method} ${req.originalURL}\n]`
+    const linea = `[${fecha}] [${hora}] ${req.method} ${req.originalUrl}\n`
     
     //fs.append agragara la linea al final del documento sin sobreescribir informacion preexistente, si el archivo no existe, lo creara
 

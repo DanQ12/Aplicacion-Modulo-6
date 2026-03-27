@@ -4,7 +4,7 @@
 const statusController = {
     //Maneja GET /status
     //Devuelve un JSON con el estado del servidor
-    getStatus: (res,req) =>{
+    getStatus: (req,res) =>{
         res.status(200).json({
             status: "ok",
             message: "El servidor esta en funcionamiento",

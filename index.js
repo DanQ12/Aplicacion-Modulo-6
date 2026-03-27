@@ -5,7 +5,8 @@
 //Cargar variables de entorno desde archivo .env
 require("dotenv").config();
 
-const express = require("express")
+const express = require("express");
+const path = require("path")
 
 //Importacion del router
 const router = require("./Routes/router");
@@ -15,6 +16,16 @@ const loggerMiddleware = require("./Middleware/logger");
 
 //Instancia de aplicacion Express
 const app = express();
+
+//Parseo del body de peticiones JSON
+
+app.use(express.json());
+
+//Parseo datos de formulario HTML
+app.use(express.urlencoded({extended: true}))
+
+//Cargar archivos estaticos
+app.use(express.static(path.join(__dirname,"public")))
 
 //Middleware para registar peticiones en log.txt
 
@@ -30,4 +41,5 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () =>{
     console.log(`✅ Servidor iniciado en http://localhost:${PORT}}`);
+    console.log(`📁 Entorno: ${process.env.NODE_ENV || "development"}`);
 })
